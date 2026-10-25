@@ -3,8 +3,7 @@ const path = require("path");
 
 const app = express();
 app.use(express.json({ limit: "12mb" }));
-app.use(express.static(path.join(__dirname, "public")));
-
+app.use(express.static(__dirname));
 const CLAUDE_KEY = process.env.ANTHROPIC_API_KEY;
 const GEMINI_KEY = process.env.GEMINI_API_KEY;
 const CLAUDE_MODEL = process.env.CLAUDE_MODEL || "claude-sonnet-5-5";
